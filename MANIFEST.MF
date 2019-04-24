@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: Main
+Class-Path: . lib\elevator-input-hw3-1.4-jar-with-dependencies.jar lib\timable-output-1.1-raw-jar-with-dependencies.jar bin
+

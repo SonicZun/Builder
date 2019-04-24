@@ -1,0 +1,12 @@
+C:\Users\17112\Desktop\test\src\Main.java
+C:\Users\17112\Desktop\test\src\constant\RegexConst.java
+C:\Users\17112\Desktop\test\src\factor\CosFactor.java
+C:\Users\17112\Desktop\test\src\factor\Factor.java
+C:\Users\17112\Desktop\test\src\factor\PowerFactor.java
+C:\Users\17112\Desktop\test\src\factor\SinFactor.java
+C:\Users\17112\Desktop\test\src\item\Item.java
+C:\Users\17112\Desktop\test\src\method\DerivateMethod.java
+C:\Users\17112\Desktop\test\src\method\FactorComparator.java
+C:\Users\17112\Desktop\test\src\method\ItemComparator.java
+C:\Users\17112\Desktop\test\src\poly\Poly.java
+C:\Users\17112\Desktop\test\src\poly\PolyTrigoSimple.java
