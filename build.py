@@ -7,11 +7,19 @@ Created on Mon Apr 22 19:10:45 2019
 
 import os
 import re
-
+import sys
 
 suffix = ".+\.java"
 print("the project is being builded...\n")
 print("The current directory : " + os.getcwd() + "\n")
+
+def clear():
+    classList = os.listdir(os.getcwd() + "\\bin\\")
+    for class_ in classList:
+        if re.match(".+\.class", class_):
+            path = os.getcwd() + "\\bin\\" + class_
+            print("Delete: " + path)
+            os.remove(path)
 
 def findPattern(path, pattern):
     fp = open(path, "r")
@@ -73,16 +81,28 @@ def writeMANIFEST():
     mf.write(jars + "\n")
     mf.write("\n")
     mf.close()          
-    
+def rmrf(path):
+    if (os.path.exists(path)):
+       for root, dirs, files in os.walk(path, topdown=False):
+           for name in files:
+               os.remove(os.path.join(root, name))
+           for name in dirs:
+               os.rmdir(os.path.join(root, name))
+       os.rmdir(path)
 
+clear()
+rmrf(os.getcwd() + "\\path")
+rmrf(os.getcwd() + "\\bin")
+os.mkdir("bin")
+os.mkdir("path")
 register(os.getcwd() + "\\src\\", "path\\srclist.txt", ".+\.java")
 jars = getLib("Windows")
 #print("jars : " + jars)
 writeMANIFEST()
-cmd = "@javac -encoding UTF-8 -cp " + jars + " @path\\srclist.txt -d bin" + " & " + "@jar -cvfm testee.jar MANIFEST.MF -C bin/ ."
+cmd = "@javac -encoding UTF-8 -cp " + jars + " @path\\srclist.txt -d bin" + " & " + "@jar -cvfm {}.jar MANIFEST.MF -C bin/ .".format(sys.argv[1])
 os.system(cmd)
-
-
+rmrf(os.getcwd() + "\\path")
+rmrf(os.getcwd() + "\\bin")
 
 
 

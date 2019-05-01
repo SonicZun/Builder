@@ -10,13 +10,13 @@
 
 3.当前目录下执行
 
-​	python build.py
+​	python build.py xxx
 
-   即可生成文件testee.jar
+   即可生成文件 xxx.jar
 
 4.当前目录下执行
 
-​	java -jar testee.jar
+​	java -jar xxx.jar
 
    即可运行java程序
 

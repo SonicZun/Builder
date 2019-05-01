@@ -1,6 +1,0 @@
-C:\Users\17112\Desktop\oo_mutual\test\src\Elevator.java
-C:\Users\17112\Desktop\oo_mutual\test\src\Floor.java
-C:\Users\17112\Desktop\oo_mutual\test\src\Main.java
-C:\Users\17112\Desktop\oo_mutual\test\src\ReqProducer.java
-C:\Users\17112\Desktop\oo_mutual\test\src\Scheduler.java
-C:\Users\17112\Desktop\oo_mutual\test\src\Tagrequest.java
