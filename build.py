@@ -104,6 +104,7 @@ cmd = "@javac -encoding UTF-8 -cp " + jars + " @path\\srclist.txt -d bin" + " & 
 os.system(cmd)
 rmrf(os.getcwd() + "\\path")
 rmrf(os.getcwd() + "\\bin")
+os.remove(os.getcwd() + "\\MANIFEST.MF")
 
 
 
