@@ -80,7 +80,8 @@ def writeMANIFEST():
     jars = jars + " bin"
     mf.write(jars + "\n")
     mf.write("\n")
-    mf.close()          
+    mf.close()      
+
 def rmrf(path):
     if (os.path.exists(path)):
        for root, dirs, files in os.walk(path, topdown=False):
@@ -90,11 +91,11 @@ def rmrf(path):
                os.rmdir(os.path.join(root, name))
        os.rmdir(path)
 
-clear()
+
 rmrf(os.getcwd() + "\\path")
 rmrf(os.getcwd() + "\\bin")
-os.mkdir("bin")
-os.mkdir("path")
+os.mkdir(os.getcwd() + "\\bin")
+os.mkdir(os.getcwd() + "\\path")
 register(os.getcwd() + "\\src\\", "path\\srclist.txt", ".+\.java")
 jars = getLib("Windows")
 #print("jars : " + jars)
