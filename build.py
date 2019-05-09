@@ -30,7 +30,7 @@ def clear():
             os.remove(pathTmp)
 
 def findPattern(path, pattern):
-    fp = open(path, "r")
+    fp = open(path, "r", encoding = 'utf-8')
     strr = fp.read()
     if (re.search(pattern, strr)):
         print("\nThe main function entry is here\n-> " + path + "\n")
