@@ -76,7 +76,10 @@ def getLib(system):
     for root,dirs,files in os.walk(pathLib,topdown=True):
         for name in files:
             jars = jars + splitter + os.path.join(root,name)
-    return jars[1:]
+    if len(jars) == 0:
+    	return ""
+    else:
+    	return jars[1:]
             
 def writeMANIFEST():
     mf = open("MANIFEST.MF", "w")
@@ -113,8 +116,10 @@ if sysType == "Windows":
 	splitter = " & "
 elif sysType == "Linux":
 	splitter = " ; "
-
-cmd = "@javac -encoding UTF-8 -cp " + jars + " @{} -d bin".format(os.path.join("path", "srclist.txt")) + splitter + "@jar -cvfm {}.jar MANIFEST.MF -C bin/ .".format(sys.argv[1])
+if len(jars) == 0:
+	cmd = "@javac -encoding UTF-8" + " @{} -d bin".format(os.path.join("path", "srclist.txt")) + splitter + "@jar -cvfm {}.jar MANIFEST.MF -C bin/ .".format(sys.argv[1])
+else:
+	cmd = "@javac -encoding UTF-8 -cp " + jars + " @{} -d bin".format(os.path.join("path", "srclist.txt")) + splitter + "@jar -cvfm {}.jar MANIFEST.MF -C bin/ .".format(sys.argv[1])
 os.system(cmd)
 rmrf(pathPath)
 rmrf(pathBin)
